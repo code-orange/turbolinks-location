@@ -1,0 +1,21 @@
+{
+	"name": "code-orange/turbolinks-location",
+	"description": "Laravel middleware to insert Turbolinks-Location header into every response",
+	"type": "library",
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Tim van Dalen",
+			"email": "tim@code-orange.nl"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"CodeOrange\\TurbolinksLocation\\": "src/"
+		}
+	},
+	"minimum-stability": "stable",
+	"require": {
+		"illuminate/http": "~5.2"
+	}
+}
