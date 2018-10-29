@@ -3,6 +3,8 @@
 namespace CodeOrange\TurbolinksLocation;
 use Closure;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * Class TurbolinksLocation
@@ -12,6 +14,10 @@ use Illuminate\Http\Request;
  */
 class TurbolinksLocation {
 	public function handle(Request $request, Closure $next) {
-		return $next($request)->header('Turbolinks-Location', $request->url());
+		$response = $next($request);
+		if($response instanceof BinaryFileResponse || $response instanceof StreamedResponse) {
+			return $response;
+		}
+		return $response->header('Turbolinks-Location', $request->url());
 	}
 }
