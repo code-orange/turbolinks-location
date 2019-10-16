@@ -16,6 +16,6 @@
 	},
 	"minimum-stability": "stable",
 	"require": {
-		"illuminate/http": "~5.2"
+		"illuminate/http": ">=5.2"
 	}
 }
